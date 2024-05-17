@@ -1,10 +1,15 @@
 import HeaderBox from "@/components/HeaderBox";
+import RightSideBar from "@/components/RightSideBar";
 import TotalBalanceBox from "@/components/TotalBalanceBox";
 import { todo } from "node:test";
 import React from "react";
 
 export default function Home() {
-  const loggedIn = { firstName: "Naveen" };
+  const loggedIn = {
+    firstName: "Naveen",
+    lastName: "Raj",
+    email: "naveen123@xyz.com",
+  };
   return (
     <div className="home">
       <header className="home-content">
@@ -21,6 +26,7 @@ export default function Home() {
         />
       </header>
       {/* todo recent transactions */}
+      <RightSideBar user={loggedIn} transactions={[]} banks={[{}, {}]} />
     </div>
   );
 }
